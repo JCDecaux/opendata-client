@@ -14,6 +14,7 @@ public class VLSClient {
 	public static final VLSJCDResource vlsClient = getClient();
 	
 	private static VLSJCDResource getClient() {
+		// Use thread-safe client
 		ResteasyClient client = new ResteasyClientBuilder()
 			.httpEngine(new ApacheHttpClient4Engine(new DefaultHttpClient(new ThreadSafeClientConnManager()))).build();
 
