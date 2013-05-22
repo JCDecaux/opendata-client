@@ -7,6 +7,8 @@ import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
 import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
 import org.jboss.resteasy.client.jaxrs.engines.ApacheHttpClient4Engine;
 
+import fr.bluepyth.opendata.jcdecaux.client.vls.v1.api.VLSJCDResource;
+
 public class VLSClient {
 	
 	public static final VLSJCDResource vlsClient = getClient();

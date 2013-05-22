@@ -1,4 +1,4 @@
-package fr.bluepyth.opendata.jcdecaux.client.vls.v1;
+package fr.bluepyth.opendata.jcdecaux.client.vls.v1.api;
 
 import java.util.List;
 
@@ -8,6 +8,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
+
 
 public interface VLSJCDResource {
 	
