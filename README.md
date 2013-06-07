@@ -31,25 +31,30 @@ JCD Open Data Client is available in my maven repository (I'll apply for Maven C
 ### Bike sharing system
 
 ```java
-import static fr.bluepyth.opendata.jcdecaux.client.vls.v1.VLSCLient.vlsClient;
+import fr.bluepyth.opendata.jcdecaux.client.vls.v1.api.ContractDTO;
+import fr.bluepyth.opendata.jcdecaux.client.vls.v1.api.StationDTO;
+
+import java.util.List;
+
+import static fr.bluepyth.opendata.jcdecaux.client.vls.v1.VLSClient.vlsClient;
 
 public class MyClass {
 
-  private static final String myApiKey = "xxxxx";
+    private static final String myApiKey = "xxxxx";
 
-  public void myMethod() {
-    // Get all stations
-    List<StationDTO> stations = vlsClient.getStations(apiKey, null);
+    public void myMethod() {
+        // Get all stations
+        List<StationDTO> stations = vlsClient.getStations(myApiKey, null);
 
-    // Get all contracts
-    List<ContractDTO> contracts = vlsClient.getContracts(apiKey);
+        // Get all contracts
+        List<ContractDTO> contracts = vlsClient.getContracts(myApiKey);
 
-    // Get all stations for one contract (Paris)
-    List<StationDTO> stationsOfParis = vlsClient.getStations(apiKey, "Paris");
+        // Get all stations for one contract (Paris)
+        List<StationDTO> paris = vlsClient.getStations(myApiKey, "Paris");
 
-    // Get one station of Paris
-    StationsDTO stationOfParis = vlsClient.getStation(apiKey, "Paris", "35010");
-  }
+        // Get one station of Paris
+        StationDTO s = vlsClient.getStation(myApiKey, "Paris", "35010");
+    }
 
 }
 ```
