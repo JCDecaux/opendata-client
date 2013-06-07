@@ -2,6 +2,28 @@
 
 This project is a simple client library for JC Decaux Open Data. In order to use this API, you need to get a key at http://developer.jcdecaux.com.
 
+## Get it
+
+JCD Open Data Client is available in my maven repository (I'll apply for Maven Central deployment).
+
+```xml
+<!-- Repository -->
+<repositories>
+    <repository>
+        <id>bluepyth</id>
+        <name>BluePyth Repository</name>
+        <url>http://repository.bluepyth.fr/content/groups/public</url>
+    </repository>
+</repositories>
+
+<!-- Dependency -->
+<dependency>
+    <groupId>fr.bluepyth.opendata.jcdecaux</groupId>
+    <artifactId>jcd-opendata-client</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
 ## Features
 
 >Note: The client is thread-safe.
