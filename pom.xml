@@ -46,7 +46,7 @@
 
 	<scm>
 		<connection>scm:git:git://github.com/BluePyth/jcd-opendata-client.git</connection>
-		<developerConnection>scm:git:git@github.com:BluePyth/jcd-opendata-client.git</developerConnection>
+		<developerConnection>scm:git:https://github.com/BluePyth/jcd-opendata-client.git</developerConnection>
 		<url>https://github.com/BluePyth/jcd-opendata-client</url>
 		<tag>HEAD</tag>
 	</scm>
