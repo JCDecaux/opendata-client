@@ -2,109 +2,126 @@ package fr.bluepyth.opendata.jcdecaux.client.vls.v1.api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Date;
+
 public class StationDTO {
-	private Long number;
-	private String name;
-	private String address;
-	private PositionDTO position;
-	private Boolean banking;
-	private Boolean bonus;
-	private String status;
-	@JsonProperty("bike_stands")
-	private Integer bikeStands;
-	@JsonProperty("available_bike_stands")
-	private Integer availableBikeStands;
-	@JsonProperty("available_bikes")
-	private Integer availableBikes;
-	@JsonProperty("last_update")
-	private Long lastUpdate;
 
-	public Long getNumber() {
-		return number;
-	}
+    public enum StationStatus {
+        OPEN, CLOSED, DISABLED
+    }
 
-	public void setNumber(Long number) {
-		this.number = number;
-	}
+    private Integer number;
+    @JsonProperty("contract_name")
+    private String contractName;
+    private String name;
+    private String address;
+    private PositionDTO position;
+    private Boolean banking;
+    private Boolean bonus;
+    @JsonProperty("bike_stands")
+    private Integer bikeStands;
+    @JsonProperty("available_bike_stands")
+    private Integer availableBikeStands;
+    @JsonProperty("available_bikes")
+    private Integer availableBikes;
+    private StationStatus status;
+    @JsonProperty("last_update")
+    private Date lastUpdate;
 
-	public String getName() {
-		return name;
-	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public Integer getNumber() {
+        return number;
+    }
 
-	public String getAddress() {
-		return address;
-	}
+    public void setNumber(Integer number) {
+        this.number = number;
+    }
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
+    public String getContractName() {
+        return contractName;
+    }
 
-	public PositionDTO getPosition() {
-		return position;
-	}
+    public void setContractName(String contractName) {
+        this.contractName = contractName;
+    }
 
-	public void setPosition(PositionDTO position) {
-		this.position = position;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public Boolean getBanking() {
-		return banking;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setBanking(Boolean banking) {
-		this.banking = banking;
-	}
+    public String getAddress() {
+        return address;
+    }
 
-	public Boolean getBonus() {
-		return bonus;
-	}
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-	public void setBonus(Boolean bonus) {
-		this.bonus = bonus;
-	}
+    public PositionDTO getPosition() {
+        return position;
+    }
 
-	public String getStatus() {
-		return status;
-	}
+    public void setPosition(PositionDTO position) {
+        this.position = position;
+    }
 
-	public void setStatus(String status) {
-		this.status = status;
-	}
+    public Boolean getBanking() {
+        return banking;
+    }
 
-	public Integer getBikeStands() {
-		return bikeStands;
-	}
+    public void setBanking(Boolean banking) {
+        this.banking = banking;
+    }
 
-	public void setBikeStands(Integer bikeStands) {
-		this.bikeStands = bikeStands;
-	}
+    public Boolean getBonus() {
+        return bonus;
+    }
 
-	public Integer getAvailableBikeStands() {
-		return availableBikeStands;
-	}
+    public void setBonus(Boolean bonus) {
+        this.bonus = bonus;
+    }
 
-	public void setAvailableBikeStands(Integer availableBikeStands) {
-		this.availableBikeStands = availableBikeStands;
-	}
+    public Integer getBikeStands() {
+        return bikeStands;
+    }
 
-	public Integer getAvailableBikes() {
-		return availableBikes;
-	}
+    public void setBikeStands(Integer bikeStands) {
+        this.bikeStands = bikeStands;
+    }
 
-	public void setAvailableBikes(Integer availableBikes) {
-		this.availableBikes = availableBikes;
-	}
+    public Integer getAvailableBikeStands() {
+        return availableBikeStands;
+    }
 
-	public Long getLastUpdate() {
-		return lastUpdate;
-	}
+    public void setAvailableBikeStands(Integer availableBikeStands) {
+        this.availableBikeStands = availableBikeStands;
+    }
 
-	public void setLastUpdate(Long lastUpdate) {
-		this.lastUpdate = lastUpdate;
-	}
+    public Integer getAvailableBikes() {
+        return availableBikes;
+    }
 
+    public void setAvailableBikes(Integer availableBikes) {
+        this.availableBikes = availableBikes;
+    }
+
+    public StationStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(StationStatus status) {
+        this.status = status;
+    }
+
+    public Date getLastUpdate() {
+        return lastUpdate;
+    }
+
+    public void setLastUpdate(Date lastUpdate) {
+        this.lastUpdate = lastUpdate;
+    }
 }

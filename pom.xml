@@ -9,6 +9,8 @@
 
 	<description>This library is a wrapper around JC Decaux's Open Data APIs</description>
 
+    <url>https://bluepyth.github.io/jcd-opendata-client</url>
+
 	<developers>
 		<developer>
 			<id>bluepyth</id>
@@ -42,7 +44,7 @@
 		<encoding>UTF-8</encoding>
 		<maven.compiler.source>1.6</maven.compiler.source>
 		<maven.compiler.target>1.6</maven.compiler.target>
-		<resteasy.version>3.0-beta-5</resteasy.version>
+		<resteasy.version>3.0-beta-6</resteasy.version>
 	</properties>
 
 	<dependencyManagement>
