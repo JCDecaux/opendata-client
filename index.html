@@ -4,30 +4,40 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Jcd-opendata-client by BluePyth</title>
-
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
     <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
   </head>
   <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/BluePyth/jcd-opendata-client">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/BluePyth/jcd-opendata-client/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/BluePyth/jcd-opendata-client/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
     <div class="wrapper">
-      <header>
-        <h1>Jcd-opendata-client</h1>
-        <p>A Java client for JC Decaux's Open Data APIs</p>
 
-        <p class="view"><a href="https://github.com/BluePyth/jcd-opendata-client">View the Project on GitHub <small>BluePyth/jcd-opendata-client</small></a></p>
-
-
-        <ul>
-          <li><a href="https://github.com/BluePyth/jcd-opendata-client/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/BluePyth/jcd-opendata-client/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/BluePyth/jcd-opendata-client">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
       <section>
+        <div id="title">
+          <h1>Jcd-opendata-client</h1>
+          <p>A Java client for JC Decaux's Open Data APIs</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/BluePyth">BluePyth</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
+
         <h2>
 <a name="java-client-for-jcdecaux-open-data" class="anchor" href="#java-client-for-jcdecaux-open-data"><span class="octicon octicon-link"></span></a>Java client for JCDecaux Open Data</h2>
 
@@ -74,21 +84,21 @@
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyClass</span> <span class="o">{</span>
 
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">myApiKey</span> <span class="o">=</span> <span class="s">"xxxxx"</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">apiKey</span> <span class="o">=</span> <span class="s">"xxxxx"</span><span class="o">;</span>
 
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">myMethod</span><span class="o">()</span> <span class="o">{</span>
-        <span class="c1">// Get all stations</span>
-        <span class="n">List</span><span class="o">&lt;</span><span class="n">StationDTO</span><span class="o">&gt;</span> <span class="n">stations</span> <span class="o">=</span> <span class="n">vlsClient</span><span class="o">.</span><span class="na">getStations</span><span class="o">(</span><span class="n">myApiKey</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">myMethod</span><span class="o">()</span> <span class="o">{</span>
+    <span class="c1">// Get all stations</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">StationDTO</span><span class="o">&gt;</span> <span class="n">all</span> <span class="o">=</span> <span class="n">vlsClient</span><span class="o">.</span><span class="na">getStations</span><span class="o">(</span><span class="n">apiKey</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
 
-        <span class="c1">// Get all contracts</span>
-        <span class="n">List</span><span class="o">&lt;</span><span class="n">ContractDTO</span><span class="o">&gt;</span> <span class="n">contracts</span> <span class="o">=</span> <span class="n">vlsClient</span><span class="o">.</span><span class="na">getContracts</span><span class="o">(</span><span class="n">myApiKey</span><span class="o">);</span>
+    <span class="c1">// Get all contracts</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">ContractDTO</span><span class="o">&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="n">vlsClient</span><span class="o">.</span><span class="na">getContracts</span><span class="o">(</span><span class="n">apiKey</span><span class="o">);</span>
 
-        <span class="c1">// Get all stations for one contract (Paris)</span>
-        <span class="n">List</span><span class="o">&lt;</span><span class="n">StationDTO</span><span class="o">&gt;</span> <span class="n">paris</span> <span class="o">=</span> <span class="n">vlsClient</span><span class="o">.</span><span class="na">getStations</span><span class="o">(</span><span class="n">myApiKey</span><span class="o">,</span> <span class="s">"Paris"</span><span class="o">);</span>
+    <span class="c1">// Get all stations for one contract (Paris)</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">StationDTO</span><span class="o">&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">vlsClient</span><span class="o">.</span><span class="na">getStations</span><span class="o">(</span><span class="n">apiKey</span><span class="o">,</span> <span class="s">"Paris"</span><span class="o">);</span>
 
-        <span class="c1">// Get one station of Paris</span>
-        <span class="n">StationDTO</span> <span class="n">s</span> <span class="o">=</span> <span class="n">vlsClient</span><span class="o">.</span><span class="na">getStation</span><span class="o">(</span><span class="n">myApiKey</span><span class="o">,</span> <span class="s">"Paris"</span><span class="o">,</span> <span class="s">"35010"</span><span class="o">);</span>
-    <span class="o">}</span>
+    <span class="c1">// Get one station of Paris</span>
+    <span class="n">StationDTO</span> <span class="n">s</span> <span class="o">=</span> <span class="n">vlsClient</span><span class="o">.</span><span class="na">getStation</span><span class="o">(</span><span class="n">apiKey</span><span class="o">,</span> <span class="s">"Paris"</span><span class="o">,</span> <span class="s">"35010"</span><span class="o">);</span>
+  <span class="o">}</span>
 
 <span class="o">}</span>
 </pre></div>
@@ -105,12 +115,9 @@
 
 <p>This software is licenced under the Apache Software License v2.0, you can find it in the LICENCE file.</p>
       </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/BluePyth">BluePyth</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+
     </div>
-    <script src="javascripts/scale.fix.js"></script>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
   </body>
 </html>
