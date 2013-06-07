@@ -65,25 +65,30 @@
 <h3>
 <a name="bike-sharing-system" class="anchor" href="#bike-sharing-system"><span class="octicon octicon-link"></span></a>Bike sharing system</h3>
 
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">static</span> <span class="n">fr</span><span class="o">.</span><span class="na">bluepyth</span><span class="o">.</span><span class="na">opendata</span><span class="o">.</span><span class="na">jcdecaux</span><span class="o">.</span><span class="na">client</span><span class="o">.</span><span class="na">vls</span><span class="o">.</span><span class="na">v1</span><span class="o">.</span><span class="na">VLSCLient</span><span class="o">.</span><span class="na">vlsClient</span><span class="o">;</span>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">fr.bluepyth.opendata.jcdecaux.client.vls.v1.api.ContractDTO</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">fr.bluepyth.opendata.jcdecaux.client.vls.v1.api.StationDTO</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">static</span> <span class="n">fr</span><span class="o">.</span><span class="na">bluepyth</span><span class="o">.</span><span class="na">opendata</span><span class="o">.</span><span class="na">jcdecaux</span><span class="o">.</span><span class="na">client</span><span class="o">.</span><span class="na">vls</span><span class="o">.</span><span class="na">v1</span><span class="o">.</span><span class="na">VLSClient</span><span class="o">.</span><span class="na">vlsClient</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyClass</span> <span class="o">{</span>
 
-  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">myApiKey</span> <span class="o">=</span> <span class="s">"xxxxx"</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">myApiKey</span> <span class="o">=</span> <span class="s">"xxxxx"</span><span class="o">;</span>
 
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">myMethod</span><span class="o">()</span> <span class="o">{</span>
-    <span class="c1">// Get all stations</span>
-    <span class="n">List</span><span class="o">&lt;</span><span class="n">StationDTO</span><span class="o">&gt;</span> <span class="n">stations</span> <span class="o">=</span> <span class="n">vlsClient</span><span class="o">.</span><span class="na">getStations</span><span class="o">(</span><span class="n">apiKey</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">myMethod</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// Get all stations</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">StationDTO</span><span class="o">&gt;</span> <span class="n">stations</span> <span class="o">=</span> <span class="n">vlsClient</span><span class="o">.</span><span class="na">getStations</span><span class="o">(</span><span class="n">myApiKey</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
 
-    <span class="c1">// Get all contracts</span>
-    <span class="n">List</span><span class="o">&lt;</span><span class="n">ContractDTO</span><span class="o">&gt;</span> <span class="n">contracts</span> <span class="o">=</span> <span class="n">vlsClient</span><span class="o">.</span><span class="na">getContracts</span><span class="o">(</span><span class="n">apiKey</span><span class="o">);</span>
+        <span class="c1">// Get all contracts</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">ContractDTO</span><span class="o">&gt;</span> <span class="n">contracts</span> <span class="o">=</span> <span class="n">vlsClient</span><span class="o">.</span><span class="na">getContracts</span><span class="o">(</span><span class="n">myApiKey</span><span class="o">);</span>
 
-    <span class="c1">// Get all stations for one contract (Paris)</span>
-    <span class="n">List</span><span class="o">&lt;</span><span class="n">StationDTO</span><span class="o">&gt;</span> <span class="n">stationsOfParis</span> <span class="o">=</span> <span class="n">vlsClient</span><span class="o">.</span><span class="na">getStations</span><span class="o">(</span><span class="n">apiKey</span><span class="o">,</span> <span class="s">"Paris"</span><span class="o">);</span>
+        <span class="c1">// Get all stations for one contract (Paris)</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">StationDTO</span><span class="o">&gt;</span> <span class="n">paris</span> <span class="o">=</span> <span class="n">vlsClient</span><span class="o">.</span><span class="na">getStations</span><span class="o">(</span><span class="n">myApiKey</span><span class="o">,</span> <span class="s">"Paris"</span><span class="o">);</span>
 
-    <span class="c1">// Get one station of Paris</span>
-    <span class="n">StationsDTO</span> <span class="n">stationOfParis</span> <span class="o">=</span> <span class="n">vlsClient</span><span class="o">.</span><span class="na">getStation</span><span class="o">(</span><span class="n">apiKey</span><span class="o">,</span> <span class="s">"Paris"</span><span class="o">,</span> <span class="s">"35010"</span><span class="o">);</span>
-  <span class="o">}</span>
+        <span class="c1">// Get one station of Paris</span>
+        <span class="n">StationDTO</span> <span class="n">s</span> <span class="o">=</span> <span class="n">vlsClient</span><span class="o">.</span><span class="na">getStation</span><span class="o">(</span><span class="n">myApiKey</span><span class="o">,</span> <span class="s">"Paris"</span><span class="o">,</span> <span class="s">"35010"</span><span class="o">);</span>
+    <span class="o">}</span>
 
 <span class="o">}</span>
 </pre></div>
