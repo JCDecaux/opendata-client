@@ -40,21 +40,21 @@ import static fr.bluepyth.opendata.jcdecaux.client.vls.v1.VLSClient.vlsClient;
 
 public class MyClass {
 
-    private static final String myApiKey = "xxxxx";
+  private static final String apiKey = "xxxxx";
 
-    public void myMethod() {
-        // Get all stations
-        List<StationDTO> stations = vlsClient.getStations(myApiKey, null);
+  public void myMethod() {
+    // Get all stations
+    List<StationDTO> all = vlsClient.getStations(apiKey, null);
 
-        // Get all contracts
-        List<ContractDTO> contracts = vlsClient.getContracts(myApiKey);
+    // Get all contracts
+    List<ContractDTO> c = vlsClient.getContracts(apiKey);
 
-        // Get all stations for one contract (Paris)
-        List<StationDTO> paris = vlsClient.getStations(myApiKey, "Paris");
+    // Get all stations for one contract (Paris)
+    List<StationDTO> p = vlsClient.getStations(apiKey, "Paris");
 
-        // Get one station of Paris
-        StationDTO s = vlsClient.getStation(myApiKey, "Paris", "35010");
-    }
+    // Get one station of Paris
+    StationDTO s = vlsClient.getStation(apiKey, "Paris", "35010");
+  }
 
 }
 ```
