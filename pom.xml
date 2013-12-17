@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>fr.bluepyth.opendata.jcdecaux</groupId>
 	<artifactId>jcd-opendata-client</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.2-SNAPSHOT</version>
 	<name>JC Decaux Open Data Client</name>
 	<inceptionYear>2013</inceptionYear>
 
