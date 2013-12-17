@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>fr.bluepyth.opendata.jcdecaux</groupId>
 	<artifactId>jcd-opendata-client</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<name>JC Decaux Open Data Client</name>
 	<inceptionYear>2013</inceptionYear>
 
@@ -47,7 +47,7 @@
 		<connection>scm:git:git://github.com/BluePyth/jcd-opendata-client.git</connection>
 		<developerConnection>scm:git:https://github.com/BluePyth/jcd-opendata-client.git</developerConnection>
 		<url>https://github.com/BluePyth/jcd-opendata-client</url>
-		<tag>1.0.0</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<properties>
@@ -55,7 +55,7 @@
 		<maven.compiler.source>1.6</maven.compiler.source>
 		<maven.compiler.target>1.6</maven.compiler.target>
         <maven-release-plugin.version>2.4</maven-release-plugin.version>
-		<resteasy.version>3.0-beta-6</resteasy.version>
+		<resteasy.version>3.0.6.Final</resteasy.version>
 	</properties>
 
 	<dependencyManagement>

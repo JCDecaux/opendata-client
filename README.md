@@ -2,6 +2,28 @@
 
 This project is a simple client library for JC Decaux Open Data. In order to use this API, you need to get a key at http://developer.jcdecaux.com.
 
+## Get it
+
+JCD Open Data Client is available in my maven repository (I'll apply for Maven Central deployment).
+
+```xml
+<!-- Repository -->
+<repositories>
+    <repository>
+        <id>bluepyth</id>
+        <name>BluePyth Repository</name>
+        <url>http://repository.bluepyth.fr/content/groups/public</url>
+    </repository>
+</repositories>
+
+<!-- Dependency -->
+<dependency>
+    <groupId>fr.bluepyth.opendata.jcdecaux</groupId>
+    <artifactId>jcd-opendata-client</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
 ## Features
 
 >Note: The client is thread-safe.
@@ -9,24 +31,29 @@ This project is a simple client library for JC Decaux Open Data. In order to use
 ### Bike sharing system
 
 ```java
-import static fr.bluepyth.opendata.jcdecaux.client.vls.v1.VLSCLient.vlsClient;
+import fr.bluepyth.opendata.jcdecaux.client.vls.v1.api.ContractDTO;
+import fr.bluepyth.opendata.jcdecaux.client.vls.v1.api.StationDTO;
+
+import java.util.List;
+
+import static fr.bluepyth.opendata.jcdecaux.client.vls.v1.VLSClient.vlsClient;
 
 public class MyClass {
 
-  private static final String myApiKey = "xxxxx";
+  private static final String apiKey = "xxxxx";
 
   public void myMethod() {
     // Get all stations
-    List<StationDTO> stations = vlsClient.getStations(apiKey, null);
+    List<StationDTO> all = vlsClient.getStations(apiKey, null);
 
     // Get all contracts
-    List<ContractDTO> contracts = vlsClient.getContracts(apiKey);
+    List<ContractDTO> c = vlsClient.getContracts(apiKey);
 
     // Get all stations for one contract (Paris)
-    List<StationDTO> stationsOfParis = vlsClient.getStations(apiKey, "Paris");
+    List<StationDTO> p = vlsClient.getStations(apiKey, "Paris");
 
     // Get one station of Paris
-    StationsDTO stationOfParis = vlsClient.getStation(apiKey, "Paris", "35010");
+    StationDTO s = vlsClient.getStation(apiKey, "Paris", "35010");
   }
 
 }
