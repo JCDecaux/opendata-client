@@ -7,20 +7,10 @@ This project is a simple client library for JC Decaux Open Data. In order to use
 JCD Open Data Client is available in my maven repository (I'll apply for Maven Central deployment).
 
 ```xml
-<!-- Repository -->
-<repositories>
-    <repository>
-        <id>bluepyth</id>
-        <name>BluePyth Repository</name>
-        <url>http://repository.bluepyth.fr/content/groups/public</url>
-    </repository>
-</repositories>
-
-<!-- Dependency -->
 <dependency>
-    <groupId>fr.bluepyth.opendata.jcdecaux</groupId>
-    <artifactId>jcd-opendata-client</artifactId>
-    <version>1.0.0</version>
+    <groupId>com.jcdecaux.opendat</groupId>
+    <artifactId>opendata-client</artifactId>
+    <version>1.1.0-SNAPSHOT</version>
 </dependency>
 ```
 
@@ -31,11 +21,7 @@ JCD Open Data Client is available in my maven repository (I'll apply for Maven C
 ### Bike sharing system
 
 ```java
-import fr.bluepyth.opendata.jcdecaux.client.vls.v1.api.ContractDTO;
-import fr.bluepyth.opendata.jcdecaux.client.vls.v1.api.StationDTO;
-
-import java.util.List;
-
+// ...
 import static fr.bluepyth.opendata.jcdecaux.client.vls.v1.VLSClient.vlsClient;
 
 public class MyClass {
@@ -61,10 +47,8 @@ public class MyClass {
 
 ## Roadmap
 
-I intend to follow JC Decaux API evolutions and to include all their APIs in this library.
+We will update this client according to updates to our Opendata API
 
 ## License
-
-Copyright Romain Sertelon 2013
 
 This software is licenced under the Apache Software License v2.0, you can find it in the LICENCE file.

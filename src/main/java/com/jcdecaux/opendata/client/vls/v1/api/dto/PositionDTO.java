@@ -1,4 +1,4 @@
-package fr.bluepyth.opendata.jcdecaux.client.vls.v1.api;
+package com.jcdecaux.opendata.client.vls.v1.api.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

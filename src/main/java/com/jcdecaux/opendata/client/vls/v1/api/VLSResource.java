@@ -1,11 +1,15 @@
-package fr.bluepyth.opendata.jcdecaux.client.vls.v1.api;
+package com.jcdecaux.opendata.client.vls.v1.api;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+
+import com.jcdecaux.opendata.client.vls.v1.api.dto.ContractDTO;
+import com.jcdecaux.opendata.client.vls.v1.api.dto.StationDTO;
+
 import java.util.List;
 
 
-public interface VLSJCDResource {
+public interface VLSResource {
 
     @GET
     @Path("/contracts")
