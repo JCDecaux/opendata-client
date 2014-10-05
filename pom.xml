@@ -1,13 +1,20 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	
+
+	<parent>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>9</version>
+	</parent>
+
 	<groupId>com.jcdecaux.opendata</groupId>
 	<artifactId>opendata-client</artifactId>
 	<version>1.1.0-SNAPSHOT</version>
-	
+
 	<name>JC Decaux Open Data Client</name>
 	<description>This library is a wrapper around JC Decaux's Open Data APIs</description>
-    <url>https://jcdecaux.github.io/opendata-client</url>
+	<url>https://jcdecaux.github.io/opendata-client</url>
 	<inceptionYear>2013</inceptionYear>
 
 	<developers>
@@ -43,8 +50,7 @@
 		<encoding>UTF-8</encoding>
 		<maven.compiler.source>1.6</maven.compiler.source>
 		<maven.compiler.target>1.6</maven.compiler.target>
-        <maven-release-plugin.version>2.4</maven-release-plugin.version>
-        
+
 		<resteasy.version>3.0.9.Final</resteasy.version>
 	</properties>
 
@@ -74,22 +80,4 @@
 		</dependency>
 	</dependencies>
 
-    <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <artifactId>maven-release-plugin</artifactId>
-                    <version>${maven-release-plugin.version}</version>
-                    <configuration>
-                        <tagNameFormat>@{project.version}</tagNameFormat>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-        <plugins>
-            <plugin>
-                <artifactId>maven-release-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 </project>
