@@ -3,41 +3,31 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Jcd-opendata-client by BluePyth</title>
+    <title>Jcd-opendata-client by JCDecaux</title>
+
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/respond.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-    <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
   <body>
-      <div id="header">
-        <nav>
-          <li class="fork"><a href="https://github.com/BluePyth/jcd-opendata-client">View On GitHub</a></li>
-          <li class="downloads"><a href="https://github.com/BluePyth/jcd-opendata-client/zipball/master">ZIP</a></li>
-          <li class="downloads"><a href="https://github.com/BluePyth/jcd-opendata-client/tarball/master">TAR</a></li>
-          <li class="title">DOWNLOADS</li>
-        </nav>
-      </div><!-- end header -->
-
     <div class="wrapper">
+      <header>
+        <h1>Jcd-opendata-client</h1>
+        <p>A Java client for JC Decaux&#39;s Open Data APIs</p>
 
+        <p class="view"><a href="https://github.com/JCDecaux/opendata-client">View the Project on GitHub <small>JCDecaux/opendata-client</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/JCDecaux/opendata-client/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/JCDecaux/opendata-client/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/JCDecaux/opendata-client">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
       <section>
-        <div id="title">
-          <h1>Jcd-opendata-client</h1>
-          <p>A Java client for JC Decaux's Open Data APIs</p>
-          <hr>
-          <span class="credits left">Project maintained by <a href="https://github.com/BluePyth">BluePyth</a></span>
-          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
-        </div>
-
         <h2>
 <a name="java-client-for-jcdecaux-open-data" class="anchor" href="#java-client-for-jcdecaux-open-data"><span class="octicon octicon-link"></span></a>Java client for JCDecaux Open Data</h2>
 
@@ -46,22 +36,12 @@
 <h2>
 <a name="get-it" class="anchor" href="#get-it"><span class="octicon octicon-link"></span></a>Get it</h2>
 
-<p>JCD Open Data Client is available in my maven repository.</p>
+<p>JCD Open Data Client is available in my maven repository (I'll apply for Maven Central deployment).</p>
 
-<div class="highlight highlight-xml"><pre><span class="c">&lt;!-- Repository --&gt;</span>
-<span class="nt">&lt;repositories&gt;</span>
-    <span class="nt">&lt;repository&gt;</span>
-        <span class="nt">&lt;id&gt;</span>bluepyth<span class="nt">&lt;/id&gt;</span>
-        <span class="nt">&lt;name&gt;</span>BluePyth Repository<span class="nt">&lt;/name&gt;</span>
-        <span class="nt">&lt;url&gt;</span>http://repository.bluepyth.fr/content/groups/public<span class="nt">&lt;/url&gt;</span>
-    <span class="nt">&lt;/repository&gt;</span>
-<span class="nt">&lt;/repositories&gt;</span>
-
-<span class="c">&lt;!-- Dependency --&gt;</span>
-<span class="nt">&lt;dependency&gt;</span>
-    <span class="nt">&lt;groupId&gt;</span>fr.bluepyth.opendata.jcdecaux<span class="nt">&lt;/groupId&gt;</span>
-    <span class="nt">&lt;artifactId&gt;</span>jcd-opendata-client<span class="nt">&lt;/artifactId&gt;</span>
-    <span class="nt">&lt;version&gt;</span>1.0.1<span class="nt">&lt;/version&gt;</span>
+<div class="highlight highlight-xml"><pre><span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>com.jcdecaux.opendat<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>opendata-client<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>1.1.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
 </pre></div>
 
@@ -75,11 +55,7 @@
 <h3>
 <a name="bike-sharing-system" class="anchor" href="#bike-sharing-system"><span class="octicon octicon-link"></span></a>Bike sharing system</h3>
 
-<div class="highlight highlight-java"><pre><span class="kn">import</span> <span class="nn">fr.bluepyth.opendata.jcdecaux.client.vls.v1.api.ContractDTO</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">fr.bluepyth.opendata.jcdecaux.client.vls.v1.api.StationDTO</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
-
+<div class="highlight highlight-java"><pre><span class="c1">// ...</span>
 <span class="kn">import</span> <span class="nn">static</span> <span class="n">fr</span><span class="o">.</span><span class="na">bluepyth</span><span class="o">.</span><span class="na">opendata</span><span class="o">.</span><span class="na">jcdecaux</span><span class="o">.</span><span class="na">client</span><span class="o">.</span><span class="na">vls</span><span class="o">.</span><span class="na">v1</span><span class="o">.</span><span class="na">VLSClient</span><span class="o">.</span><span class="na">vlsClient</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyClass</span> <span class="o">{</span>
@@ -106,18 +82,19 @@
 <h2>
 <a name="roadmap" class="anchor" href="#roadmap"><span class="octicon octicon-link"></span></a>Roadmap</h2>
 
-<p>I intend to follow JC Decaux API evolutions and to include all their APIs in this library.</p>
+<p>We will update this client according to updates to our Opendata API</p>
 
 <h2>
 <a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
 
-<p>Copyright Romain Sertelon 2013</p>
-
 <p>This software is licenced under the Apache Software License v2.0, you can find it in the LICENCE file.</p>
       </section>
-
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/JCDecaux">JCDecaux</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    <script src="javascripts/scale.fix.js"></script>
     
   </body>
 </html>
