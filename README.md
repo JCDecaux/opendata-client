@@ -22,7 +22,7 @@ JCD Open Data Client is available in my maven repository (I'll apply for Maven C
 
 ```java
 // ...
-import static fr.bluepyth.opendata.jcdecaux.client.vls.v1.VLSClient.vlsClient;
+import static com.jcdecaux.opendata.client.vls.v1.VLSClient.vlsClient;
 
 public class MyClass {
 
