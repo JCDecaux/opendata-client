@@ -8,7 +8,7 @@ JCD Open Data Client is available in my maven repository (I'll apply for Maven C
 
 ```xml
 <dependency>
-    <groupId>com.jcdecaux.opendat</groupId>
+    <groupId>com.jcdecaux.opendata</groupId>
     <artifactId>opendata-client</artifactId>
     <version>1.1.0-SNAPSHOT</version>
 </dependency>
