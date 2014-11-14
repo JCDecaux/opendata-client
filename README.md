@@ -4,7 +4,7 @@ This project is a simple client library for JC Decaux Open Data. In order to use
 
 ## Get it
 
-JCD Open Data Client is available in my maven repository (I'll apply for Maven Central deployment).
+JCD Open Data Client is available in Maven Central repository.
 
 ```xml
 <dependency>
