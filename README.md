@@ -1,3 +1,5 @@
+> Note: current master version is 2.0.0-SNAPSHOT. We are changing the Java APIs to be more flexible and user-friendly. This README is valid for 1.X only.
+
 ## Java client for JCDecaux Open Data
 
 This project is a simple client library for JC Decaux Open Data. In order to use this API, you need to get a key at http://developer.jcdecaux.com.
