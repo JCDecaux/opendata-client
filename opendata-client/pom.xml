@@ -9,10 +9,15 @@
 
 	<artifactId>opendata-client</artifactId>
 
-	<name>JC Decaux Open Data Client</name>
+	<name>JC Decaux Open Data Client JAX-RS</name>
 	<description>JAX-RS Client implementation</description>
 
 	<dependencies>
+		<dependency>
+			<groupId>com.jcdecaux.opendata</groupId>
+			<artifactId>opendata-client-common</artifactId>
+		</dependency>
+	
 		<dependency>
 			<groupId>org.jboss.resteasy</groupId>
 			<artifactId>resteasy-jackson2-provider</artifactId>
