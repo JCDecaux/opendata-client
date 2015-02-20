@@ -18,13 +18,18 @@ public class VLSClient implements VLSResource {
 	private final VLSResource jaxrsClient;
 
 	public VLSClient(OpendataContext context) {
-		ResteasyClient client = new ResteasyClientBuilder() //
-				.httpEngine(new ApacheHttpClient4Engine(new DefaultHttpClient(new PoolingClientConnectionManager()))) //
-				.build();
+
+		ResteasyClientBuilder builder = new ResteasyClientBuilder() //
+				.httpEngine(new ApacheHttpClient4Engine(new DefaultHttpClient(new PoolingClientConnectionManager())));
+
+		if (context.hasProxy) {
+			builder.defaultProxy(context.proxyHost, context.proxyPort);
+		}
+
+		ResteasyClient client = builder.build();
 
 		ResteasyWebTarget target = client.target(OpendataContext.OPENDATA_BASE_URL);
 		target.queryParam(OpendataContext.API_KEY_PARAM, context.apiKey);
-
 		this.jaxrsClient = target.proxy(VLSResource.class);
 
 	}
