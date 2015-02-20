@@ -1,4 +1,4 @@
-package com.jcdecaux.opendata.client.vls.v1;
+package com.jcdecaux.opendata.client.jaxrs.vls.v1;
 
 import java.util.List;
 
@@ -10,6 +10,8 @@ import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
 import org.jboss.resteasy.client.jaxrs.engines.ApacheHttpClient4Engine;
 
 import com.jcdecaux.opendata.client.OpendataContext;
+import com.jcdecaux.opendata.client.vls.v1.VLSContract;
+import com.jcdecaux.opendata.client.vls.v1.VLSStation;
 
 public class VLSClient implements VLSResource {
 

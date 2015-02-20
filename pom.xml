@@ -47,8 +47,8 @@
 	</scm>
 
     <modules>
-        <module>opendata-client</module>
         <module>opendata-client-common</module>
+        <module>opendata-client-jaxrs</module>
     </modules>
 
 	<properties>
