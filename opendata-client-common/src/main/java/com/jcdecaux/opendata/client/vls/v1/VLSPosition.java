@@ -1,8 +1,8 @@
-package com.jcdecaux.opendata.client.vls.v1.api.dto;
+package com.jcdecaux.opendata.client.vls.v1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class PositionDTO {
+public class VLSPosition {
 	@JsonProperty("lat")
 	private Double latitude;
 	@JsonProperty("lng")

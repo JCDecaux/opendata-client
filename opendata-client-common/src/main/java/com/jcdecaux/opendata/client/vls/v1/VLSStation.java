@@ -1,10 +1,10 @@
-package com.jcdecaux.opendata.client.vls.v1.api.dto;
+package com.jcdecaux.opendata.client.vls.v1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Date;
 
-public class StationDTO {
+public class VLSStation {
 
     public enum StationStatus {
         OPEN, CLOSED, DISABLED
@@ -15,7 +15,7 @@ public class StationDTO {
     private String contractName;
     private String name;
     private String address;
-    private PositionDTO position;
+    private VLSPosition position;
     private Boolean banking;
     private Boolean bonus;
     @JsonProperty("bike_stands")
@@ -61,11 +61,11 @@ public class StationDTO {
         this.address = address;
     }
 
-    public PositionDTO getPosition() {
+    public VLSPosition getPosition() {
         return position;
     }
 
-    public void setPosition(PositionDTO position) {
+    public void setPosition(VLSPosition position) {
         this.position = position;
     }
 

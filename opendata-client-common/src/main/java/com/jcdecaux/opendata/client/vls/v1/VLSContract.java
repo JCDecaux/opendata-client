@@ -1,10 +1,10 @@
-package com.jcdecaux.opendata.client.vls.v1.api.dto;
+package com.jcdecaux.opendata.client.vls.v1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
-public final class ContractDTO {
+public final class VLSContract {
     private String name;
     @JsonProperty("commercial_name")
     private String commercialName;

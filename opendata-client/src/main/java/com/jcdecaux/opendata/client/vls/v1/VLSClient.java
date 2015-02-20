@@ -16,8 +16,8 @@ import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
 import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
 import org.jboss.resteasy.client.jaxrs.engines.ApacheHttpClient4Engine;
 
-import com.jcdecaux.opendata.client.vls.v1.api.dto.ContractDTO;
-import com.jcdecaux.opendata.client.vls.v1.api.dto.StationDTO;
+import com.jcdecaux.opendata.client.vls.v1.VLSContract;
+import com.jcdecaux.opendata.client.vls.v1.VLSStation;
 
 public class VLSClient {
 
@@ -38,17 +38,17 @@ public class VLSClient {
         @GET
         @Path("/contracts")
         @Produces(MediaType.APPLICATION_JSON)
-        public List<ContractDTO> getContracts(@QueryParam("apiKey") String apiKey);
+        public List<VLSContract> getContracts(@QueryParam("apiKey") String apiKey);
 
         @GET
         @Path("/stations")
         @Produces(MediaType.APPLICATION_JSON)
-        public List<StationDTO> getStations(@QueryParam("apiKey") String apiKey, @QueryParam("contract") String contractName);
+        public List<VLSStation> getStations(@QueryParam("apiKey") String apiKey, @QueryParam("contract") String contractName);
 
         @GET
         @Path("/stations/{number}")
         @Produces(MediaType.APPLICATION_JSON)
-        public StationDTO getStation(@QueryParam("apiKey") String apiKey, @QueryParam("contract") String contractName, @PathParam("number") String stationNumber);
+        public VLSStation getStation(@QueryParam("apiKey") String apiKey, @QueryParam("contract") String contractName, @PathParam("number") String stationNumber);
     }
 
 }
