@@ -2,13 +2,6 @@ package com.jcdecaux.opendata.client.vls.v1;
 
 import java.util.List;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
-import javax.ws.rs.core.MediaType;
-
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.conn.PoolingClientConnectionManager;
 import org.jboss.resteasy.client.jaxrs.ResteasyClient;
@@ -16,39 +9,37 @@ import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
 import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
 import org.jboss.resteasy.client.jaxrs.engines.ApacheHttpClient4Engine;
 
-import com.jcdecaux.opendata.client.vls.v1.VLSContract;
-import com.jcdecaux.opendata.client.vls.v1.VLSStation;
+import com.jcdecaux.opendata.client.OpendataContext;
 
-public class VLSClient {
+public class VLSClient implements VLSResource {
 
-    public static final VLSResource vlsClient = getClient();
+	private final VLSResource jaxrsClient;
 
-    private static VLSResource getClient() {
-        // Use thread-safe client
-        ResteasyClient client = new ResteasyClientBuilder()
-                .httpEngine(new ApacheHttpClient4Engine(new DefaultHttpClient(new PoolingClientConnectionManager()))).build();
+	public VLSClient(OpendataContext context) {
+		ResteasyClient client = new ResteasyClientBuilder() //
+				.httpEngine(new ApacheHttpClient4Engine(new DefaultHttpClient(new PoolingClientConnectionManager()))) //
+				.build();
 
-        ResteasyWebTarget target = client.target("https://api.jcdecaux.com/vls/v1");
+		ResteasyWebTarget target = client.target(OpendataContext.OPENDATA_BASE_URL);
+		target.queryParam(OpendataContext.API_KEY_PARAM, context.apiKey);
 
-        return target.proxy(VLSResource.class);
-    }
-    
-    public interface VLSResource {
+		this.jaxrsClient = target.proxy(VLSResource.class);
 
-        @GET
-        @Path("/contracts")
-        @Produces(MediaType.APPLICATION_JSON)
-        public List<VLSContract> getContracts(@QueryParam("apiKey") String apiKey);
+	}
 
-        @GET
-        @Path("/stations")
-        @Produces(MediaType.APPLICATION_JSON)
-        public List<VLSStation> getStations(@QueryParam("apiKey") String apiKey, @QueryParam("contract") String contractName);
+	@Override
+	public List<VLSContract> getContracts() {
+		return jaxrsClient.getContracts();
+	}
 
-        @GET
-        @Path("/stations/{number}")
-        @Produces(MediaType.APPLICATION_JSON)
-        public VLSStation getStation(@QueryParam("apiKey") String apiKey, @QueryParam("contract") String contractName, @PathParam("number") String stationNumber);
-    }
+	@Override
+	public List<VLSStation> getStations(String contractName) {
+		return jaxrsClient.getStations(contractName);
+	}
+
+	@Override
+	public VLSStation getStation(String contractName, String stationNumber) {
+		return jaxrsClient.getStation(contractName, stationNumber);
+	}
 
 }
