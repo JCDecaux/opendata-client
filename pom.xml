@@ -8,8 +8,9 @@
 	</parent>
 
 	<groupId>com.jcdecaux.opendata</groupId>
-	<artifactId>opendata-client</artifactId>
+	<artifactId>opendata-client-parent</artifactId>
 	<version>2.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
 	<name>JC Decaux Open Data Client</name>
 	<description>This library is a wrapper around JC Decaux's Open Data APIs</description>
@@ -45,6 +46,10 @@
 		<tag>HEAD</tag>
 	</scm>
 
+    <modules>
+        <module>opendata-client</module>
+    </modules>
+
 	<properties>
 		<encoding>UTF-8</encoding>
 		<maven.compiler.source>1.6</maven.compiler.source>
@@ -67,16 +72,5 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
-	<dependencies>
-		<dependency>
-			<groupId>org.jboss.resteasy</groupId>
-			<artifactId>resteasy-jackson2-provider</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.jboss.resteasy</groupId>
-			<artifactId>resteasy-client</artifactId>
-		</dependency>
-	</dependencies>
 
 </project>
