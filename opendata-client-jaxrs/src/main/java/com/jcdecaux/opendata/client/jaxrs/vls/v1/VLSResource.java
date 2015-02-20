@@ -9,8 +9,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
-import com.jcdecaux.opendata.client.vls.v1.VLSContract;
-import com.jcdecaux.opendata.client.vls.v1.VLSStation;
+import com.jcdecaux.opendata.client.common.vls.v1.VLSContract;
+import com.jcdecaux.opendata.client.common.vls.v1.VLSStation;
 
 @Path("/vls/v1")
 public interface VLSResource {

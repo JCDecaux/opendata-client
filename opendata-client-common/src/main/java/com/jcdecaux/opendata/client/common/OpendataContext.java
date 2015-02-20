@@ -1,4 +1,4 @@
-package com.jcdecaux.opendata.client;
+package com.jcdecaux.opendata.client.common;
 
 public class OpendataContext {
 

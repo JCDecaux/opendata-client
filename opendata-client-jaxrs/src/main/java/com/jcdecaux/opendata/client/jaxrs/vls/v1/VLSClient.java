@@ -9,9 +9,9 @@ import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
 import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
 import org.jboss.resteasy.client.jaxrs.engines.ApacheHttpClient4Engine;
 
-import com.jcdecaux.opendata.client.OpendataContext;
-import com.jcdecaux.opendata.client.vls.v1.VLSContract;
-import com.jcdecaux.opendata.client.vls.v1.VLSStation;
+import com.jcdecaux.opendata.client.common.OpendataContext;
+import com.jcdecaux.opendata.client.common.vls.v1.VLSContract;
+import com.jcdecaux.opendata.client.common.vls.v1.VLSStation;
 
 public class VLSClient implements VLSResource {
 

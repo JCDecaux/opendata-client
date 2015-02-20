@@ -1,4 +1,4 @@
-package com.jcdecaux.opendata.client.vls.v1;
+package com.jcdecaux.opendata.client.common.vls.v1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
