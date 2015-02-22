@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
@@ -10,7 +11,7 @@
 	<groupId>com.jcdecaux.opendata</groupId>
 	<artifactId>opendata-client-parent</artifactId>
 	<version>2.0.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
+	<packaging>pom</packaging>
 
 	<name>JC Decaux Open Data Client</name>
 	<description>This library is a wrapper around JC Decaux's Open Data APIs</description>
@@ -46,20 +47,23 @@
 		<tag>HEAD</tag>
 	</scm>
 
-    <modules>
-        <module>opendata-client-common</module>
-        <module>opendata-client-jaxrs</module>
-        <module>opendata-client-spring</module>
-    </modules>
+	<modules>
+		<module>opendata-client-common</module>
+		<module>opendata-client-jaxrs</module>
+		<module>opendata-client-spring</module>
+		<module>opendata-client-android</module>
+	</modules>
 
 	<properties>
 		<encoding>UTF-8</encoding>
 		<maven.compiler.source>1.6</maven.compiler.source>
 		<maven.compiler.target>1.6</maven.compiler.target>
 
-		<resteasy.version>3.0.9.Final</resteasy.version>
 		<jackson.version>2.4.1</jackson.version>
+		<resteasy.version>3.0.9.Final</resteasy.version>
+		<retrofit.version>1.9.0</retrofit.version>
 		<spring.version>4.1.5.RELEASE</spring.version>
+		<android.version>4.1.1.4</android.version>
 	</properties>
 
 	<dependencyManagement>
@@ -69,7 +73,13 @@
 				<artifactId>opendata-client-common</artifactId>
 				<version>${project.version}</version>
 			</dependency>
-			
+
+			<dependency>
+				<groupId>com.google.android</groupId>
+				<artifactId>android</artifactId>
+				<scope>provided</scope>
+				<version>${android.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>com.fasterxml.jackson.core</groupId>
 				<artifactId>jackson-annotations</artifactId>
@@ -89,6 +99,16 @@
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-web</artifactId>
 				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.squareup.retrofit</groupId>
+				<artifactId>retrofit</artifactId>
+				<version>${retrofit.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.squareup.retrofit</groupId>
+				<artifactId>converter-jackson</artifactId>
+				<version>${retrofit.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
